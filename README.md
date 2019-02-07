@@ -22,6 +22,6 @@ The `test-infra` repository has the following structure:
 
 The `test-infra` repository contains the whole configuration of Prow. Its purpose is to replace the internal Continuous Integration (CI) tool in the `kyma-project` organization.
 
-If you want to find out what Prow is, how you can test it, or contribute to it, read the main [`README.md`](./prow/README.md) document in the `prow` folder.
+If you want to find out what Prow is, how you can test it, or contribute to it, read the main [`README.md`](./prow/README.md) document in the `prow` folder..
 
 For more detailed documentation, such as installation guides, see the [`docs/prow`](./docs/prow) subfolder.
