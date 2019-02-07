@@ -1,0 +1,24 @@
+plugins:
+  suleymanakbas91:
+    - trigger
+    - cat
+  suleymanakbas91/test-infra:
+    - config-updater
+
+config_updater:
+  config_file: config.yaml
+  plugin_file: plugins.yaml
+  maps:
+    prow/jobs/**/*.yaml:
+      name: job-config
+    config.yaml:
+      name: config
+    plugins.yaml:
+      name: plugins
+
+triggers:
+- repos:
+  - suleymanakbas91
+  trusted_org: kyma-project
+  only_org_members: true
+  ignore_ok_to_test: true
