@@ -2,7 +2,7 @@
 
 ## Overview
 
-The purpose of the `test-infra` repository is to store configuration and scripts for the test infrastructure used in the `kyma-project` organization.
+The purpose of the `test-infra` repository is to store configuration and scripts for the test infrastructure used in the `kyma-project` organization.dfd
 
 ### Project structure
 
