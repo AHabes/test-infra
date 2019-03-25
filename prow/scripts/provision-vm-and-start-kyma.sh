@@ -28,8 +28,8 @@ ZONE_LIMIT=${ZONE_LIMIT:-5}
 EU_ZONES=$(gcloud compute zones list --filter="name~europe" --limit="${ZONE_LIMIT}" | tail -n +2 | awk '{print $1}')
 
 for ZONE in ${EU_ZONES}; do
-    shout "Attempting to create a new instance named kyma-integration-test-${RANDOM_ID} in zone ${ZONE}"
-    gcloud compute instances create "kyma-integration-test-${RANDOM_ID}" \
+    shout "Attempting to create a new instance named kyma-integration-test-${RANDOM_ID}-A in zone ${ZONE}"
+    gcloud compute instances create "kyma-integration-test-${RANDOM_ID}-A" \
         --metadata enable-oslogin=TRUE \
         --image debian-9-stretch-v20181011 \
         --image-project debian-cloud \
