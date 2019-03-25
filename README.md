@@ -1,4 +1,4 @@
-# Test Infra
+# Test Infra.
 
 ## Overview
 
