@@ -9,11 +9,11 @@ source "${SCRIPT_DIR}/library.sh"
 cleanup() {
     ARG=$?
     shout "Removing instance kyma-integration-test-${RANDOM_ID}"
-    gcloud compute instances delete --zone="${ZONE}" "kyma-integration-test-${RANDOM_ID}"
+#   gcloud compute instances delete --zone="${ZONE}" "kyma-integration-test-${RANDOM_ID}-A"
     exit $ARG
 }
 
-authenticate
+#authenticate
 
 RANDOM_ID=$(openssl rand -hex 4)
 
