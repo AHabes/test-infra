@@ -14,7 +14,7 @@ cleanup() {
 }
 
 #authenticate
-shout "Hiiiiiii"
+
 RANDOM_ID=$(openssl rand -hex 4)
 
 LABELS=""
@@ -24,7 +24,7 @@ else
     LABELS=(--labels "pull-number=$PULL_NUMBER,job-name=kyma-integration")
 fi
 
-shout "Labels are -------------> ${LABELS[@]}"
+
 ZONE_LIMIT=${ZONE_LIMIT:-5}
 EU_ZONES=$(gcloud compute zones list --filter="name~europe" --limit="${ZONE_LIMIT}" | tail -n +2 | awk '{print $1}')
 
