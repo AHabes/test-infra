@@ -9,12 +9,12 @@ source "${SCRIPT_DIR}/library.sh"
 cleanup() {
     ARG=$?
     shout "Removing instance kyma-integration-test-${RANDOM_ID}"
-#   gcloud compute instances delete --zone="${ZONE}" "kyma-integration-test-${RANDOM_ID}-A"
+#   gcloud compute instances delete --zone="${ZONE}" "kyma-test-${RANDOM_ID}-A"
     exit $ARG
 }
 
 #authenticate
-
+shout "Hiiiiiii"
 RANDOM_ID=$(openssl rand -hex 4)
 
 LABELS=""
@@ -24,12 +24,13 @@ else
     LABELS=(--labels "pull-number=$PULL_NUMBER,job-name=kyma-integration")
 fi
 
+shout "Labels are -------------> ${LABELS[@]}"
 ZONE_LIMIT=${ZONE_LIMIT:-5}
 EU_ZONES=$(gcloud compute zones list --filter="name~europe" --limit="${ZONE_LIMIT}" | tail -n +2 | awk '{print $1}')
 
 for ZONE in ${EU_ZONES}; do
     shout "Attempting to create a new instance named kyma-integration-test-${RANDOM_ID}-A in zone ${ZONE}"
-    gcloud compute instances create "kyma-integration-test-${RANDOM_ID}-A" \
+    gcloud compute instances create "kyma-test-${RANDOM_ID}-A" \
         --metadata enable-oslogin=TRUE \
         --image debian-9-stretch-v20181011 \
         --image-project debian-cloud \
