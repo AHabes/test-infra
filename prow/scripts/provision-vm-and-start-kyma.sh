@@ -9,7 +9,7 @@ source "${SCRIPT_DIR}/library.sh"
 cleanup() {
     ARG=$?
     shout "Removing instance kyma-integration-test-${RANDOM_ID}"
-#   gcloud compute instances delete --zone="${ZONE}" "kyma-test-${RANDOM_ID}-A"
+#   gcloud compute instances delete --zone="${ZONE}" "kyma-test-${RANDOM_ID}-a"
     exit $ARG
 }
 
@@ -30,7 +30,7 @@ EU_ZONES=$(gcloud compute zones list --filter="name~europe" --limit="${ZONE_LIMI
 
 for ZONE in ${EU_ZONES}; do
     shout "Attempting to create a new instance named kyma-integration-test-${RANDOM_ID}-A in zone ${ZONE}"
-    gcloud compute instances create "kyma-test-${RANDOM_ID}-A" \
+    gcloud compute instances create "kyma-test-${RANDOM_ID}-a" \
         --metadata enable-oslogin=TRUE \
         --image debian-9-stretch-v20181011 \
         --image-project debian-cloud \
