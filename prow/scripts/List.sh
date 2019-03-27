@@ -9,3 +9,4 @@ source "${SCRIPT_DIR}/library.sh"
 VMS=$(gcloud compute instances list --limit 2 | tail -n +2 | awk '{print $1}')
 
 shout "vm instances are as  --------->  ${VMS}"
+shout "END OF FILE"
